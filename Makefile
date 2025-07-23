@@ -38,8 +38,8 @@ ifeq ($(DOCKER_COMMAND),podman)
 endif
 
 
-.PHONY: generate-go
-generate-go:
+.PHONY: generate-example
+generate-example:
 	mkdir -p internal/metadata
 	$(DOCKER_RUN) --rm \
 		$(DOCKER_USER_IS_HOST_USER_ARG) \
