@@ -24,4 +24,4 @@ $ make generate-example
 2. Check the generated files in [./internal/metadata/](./internal/metadata/).
 
 
-**Example metrics and repository structure based on: https://github.com/jsuereth/o11y-by-design/tree/main**
+**Repository structure based on: https://github.com/jsuereth/o11y-by-design/tree/main**

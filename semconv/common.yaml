@@ -1,16 +1,22 @@
 groups:
   - id: shared.attributes
     type: attribute_group
-    brief: Attributes shared between our signals.
+    brief: Attributes shared between the generated signals.
     attributes:
-      - id: auction.id
+      - id: cpu.core
         type: int
         brief: >
-          The id of the auction.
+          Logical CPU number starting at 0.
         stability: stable
-      - id: auction.name
+      - id: cpu.state
         type: string
         brief: >
-          The name of the auction
+          Breakdown of CPU usage by type.
         stability: stable
-        examples: ["Fish for sale"]
+        examples: ["idle, interrupt, nice, softirq, steal, system, user, wait"]
+      - id: memory.state
+        type: string
+        brief: >
+          Breakdown of Memory usage by type.
+        stability: stable
+        examples: ["available, used"]

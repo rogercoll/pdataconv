@@ -1,16 +1,29 @@
 groups:
-  - id: metric.auction.bid.count
+  - id: metric.container.cpu.usage
     type: metric
-    metric_name: auction.bid.count
+    metric_name: container.cpu.usage
     stability: stable
-    brief: "Count of all bids we've seen"
+    brief: "Container CPU consumed time, as reported by the container runtime"
     instrument: counter
-    unit: "{bid}"
+    unit: "By"
     annotations:
       monotonic: true
       aggregation_temporality: cumulative
     attributes:
-      - ref: auction.id
+      - ref: cpu.core
         requirement_level: required
-      - ref: auction.name
-        requirement_level: recommended
+      - ref: cpu.state
+        requirement_level: required
+  - id: metric.container.memory.usage
+    type: metric
+    metric_name: container.memory.usage
+    stability: stable
+    brief: "Memory usage of the container"
+    instrument: counter
+    unit: "By"
+    annotations:
+      monotonic: false
+      aggregation_temporality: cumulative
+    attributes:
+      - ref: memory.state
+        requirement_level: required
