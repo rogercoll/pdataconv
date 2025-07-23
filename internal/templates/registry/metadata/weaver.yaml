@@ -11,6 +11,20 @@ templates:
       | map(select(.type == "metric"))
     application_mode: single
     file_name: generated_metrics_config.go
+  - pattern: resource.go.j2
+    filter: >
+      .groups
+      | map(select(.id == "resource.attributes"))
+    application_mode: single
+    file_name: generated_resource.go
+  - template: resource_config.go.j2
+    filter: >
+      .groups
+      | map(select(.id == "resource.attributes"))
+    params:
+      metrics: true
+    application_mode: single
+    file_name: generated_resource_config.go
 comment_formats:
   go:
     format: markdown
