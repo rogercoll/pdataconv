@@ -1,0 +1,26 @@
+groups:
+  - id: resource.attributes
+    type: attribute_group
+    brief: Resource attributes for the generated metrics.
+    attributes:
+      - id: container.runtime
+        type: string
+        brief: >
+          The runtime where the container is running on.
+        stability: stable
+        requirement_level: required
+        examples: ["podman", "docker"]
+      - id: container.id
+        type: string
+        brief: >
+           The ID of the container.
+        stability: stable
+        requirement_level: required
+        examples: ["12345abcd", "jkfldsaja"]
+      - id: container.command_line
+        type: string
+        brief: >
+           The full command executed by the container..
+        stability: stable
+        requirement_level: opt_in
+        examples: ["echo yes"]
